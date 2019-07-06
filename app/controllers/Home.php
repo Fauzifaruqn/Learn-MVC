@@ -1,9 +1,13 @@
 <?php
 
-class Home {
+class Home extends Controller{
     // Membuat Method default yaitu method index.
     public function index()
     {
-        echo 'home/index';
+        // Memamnggil view
+        $data['judul'] = 'Home';
+        $this->view('templates/header', $data);
+        $this->view('home/index');
+        $this->view('templates/footer');
     }
 }
